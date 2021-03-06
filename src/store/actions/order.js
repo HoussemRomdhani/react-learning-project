@@ -33,7 +33,6 @@ export const purchaseBurger = (order) => {
         dispatch(purchaseBurgerStart());
         axios.post( '/orders.json', order )
             .then( response => {
-                console.log('response.data', response.data)
                 dispatch(purchaseBurgerSuccess(response.data.name, response.data));
             })
             .catch( error => {
